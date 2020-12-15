@@ -10,6 +10,11 @@ public class CubeBehaviour : MonoBehaviour
     public Vector3 size;
     public Vector3 max;
     public Vector3 min;
+
+    public float speed;
+    public float gravity;
+    public Vector3 direction;
+
     public bool isColliding;
     public bool debug;
     public List<CubeBehaviour> contacts;
@@ -37,8 +42,11 @@ public class CubeBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        // physics related calculations
+        //calculations zone
+        transform.position += direction * speed * Time.deltaTime;
+        speed += gravity;
     }
+
 
     private void OnDrawGizmos()
     {

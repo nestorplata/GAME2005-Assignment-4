@@ -26,6 +26,7 @@ public class CollisionManager : MonoBehaviour
                 }
             }
         }
+        
     }
 
     public static void CheckAABBs(CubeBehaviour a, CubeBehaviour b)

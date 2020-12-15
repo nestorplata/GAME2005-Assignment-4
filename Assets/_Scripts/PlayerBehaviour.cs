@@ -11,6 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public BulletManager bulletManager;
 
+    
     void start()
     {
     }
