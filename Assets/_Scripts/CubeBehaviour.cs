@@ -81,13 +81,13 @@ public class CubeBehaviour : MonoBehaviour
             top = true;
             going_up = false;
         }
-        else if (isColliding == true && top == true)
-        {
-            stop = true;
-        }
         else
         {
             top = false;
+        }
+        if (isColliding == true && top == true)
+        {
+            stop = true;
         }
 
 
@@ -117,16 +117,19 @@ public class CubeBehaviour : MonoBehaviour
         //movement
         if (stop == true)
         {
+            speed = 0;
             direction = (Vector3.down) * speed * Time.deltaTime;
-            speed =0;
+
         }
         else if (isColliding == true || top ==false)
         {
+
             direction = (Vector3.down) * speed * Time.deltaTime - friction;
             speed += gravity;
         }
         else
         {
+
             direction = (Vector3.down) * speed * Time.deltaTime;
             speed += gravity;
         }
