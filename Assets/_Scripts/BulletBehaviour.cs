@@ -8,6 +8,13 @@ public class BulletBehaviour : MonoBehaviour
     public float speed;
     public Vector3 direction;
     public float range;
+    public float gravity;
+
+    public Vector3 mCenter;
+    float mRadious;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +30,9 @@ public class BulletBehaviour : MonoBehaviour
 
     private void _Move()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction;
+        direction = (Vector3.down) * speed * Time.deltaTime;
+        speed += gravity;
     }
 
     private void _CheckBounds()

@@ -137,6 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244131539}
+  - component: {fileID: 244131540}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -164,6 +165,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244131540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244131538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c110667484f669949bf3c5ff6dae4b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actors: []
 --- !u!1 &403008321
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &454434231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,9 +255,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
   gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -322,6 +347,7 @@ GameObject:
   - component: {fileID: 526557355}
   - component: {fileID: 526557354}
   - component: {fileID: 526557353}
+  - component: {fileID: 526557357}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -329,27 +355,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &526557353
-MonoBehaviour:
+--- !u!65 &526557353
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526557352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1d0dbd2dcd7624487947ef0ac21a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: {x: 0, y: 0, z: 0}
-  max: {x: 0, y: 0, z: 0}
-  min: {x: 0, y: 0, z: 0}
-  speed: 0
-  gravity: 0
-  direction: {x: 0, y: 0, z: 0}
-  isColliding: 0
-  debug: 0
-  contacts: []
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &526557354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -413,6 +431,38 @@ Transform:
   m_Father: {fileID: 244131539}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526557357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526557352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1d0dbd2dcd7624487947ef0ac21a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 0, y: 0, z: 0}
+  max: {x: 0, y: 0, z: 0}
+  min: {x: 0, y: 0, z: 0}
+  i: 1
+  speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
+  gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
+  direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
+  isColliding: 0
+  debug: 0
+  contacts: []
 --- !u!1001 &579578804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,9 +616,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
-  gravity: -0.01
-  direction: {x: 0, y: 1, z: 0}
+  mass: 40
+  weight: 0
+  normal: 0
+  gravity: 0.2
+  n_force: 0
+  f_friction: 0
+  c_friction: -0.05
+  bouncing: 0
+  top: 1
+  direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -629,7 +690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605384474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -6.42, z: 0}
+  m_LocalPosition: {x: 5.78, y: -6.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1772331731}
@@ -711,7 +772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613454532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.43, y: -6.52, z: 0}
+  m_LocalPosition: {x: 13.37, y: -8, z: -1.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1772331731}
@@ -732,9 +793,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
-  gravity: -0.01
-  direction: {x: 0, y: 1, z: 0}
+  mass: 5
+  weight: 0
+  normal: 0
+  gravity: 0.01
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
+  direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -750,13 +822,14 @@ GameObject:
   - component: {fileID: 617204082}
   - component: {fileID: 617204081}
   - component: {fileID: 617204080}
+  - component: {fileID: 617204084}
   m_Layer: 0
   m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &617204080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,9 +845,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
   gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -841,6 +925,19 @@ Transform:
   m_Father: {fileID: 244131539}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &617204084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617204079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c110667484f669949bf3c5ff6dae4b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actors: []
 --- !u!1 &681930395
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,9 +1094,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
-  gravity: 0
+  mass: 20
+  weight: 0
+  normal: 0
+  gravity: 0.01
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -1060,7 +1168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746712839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.74, y: -6.63, z: 0}
+  m_LocalPosition: {x: 7.74, y: -7.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1772331731}
@@ -1195,9 +1303,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
-  gravity: -0.01
-  direction: {x: 0, y: 1, z: 0}
+  mass: 10
+  weight: 0
+  normal: 0
+  gravity: 0.01
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
+  direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -1636,20 +1755,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772331730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1d0dbd2dcd7624487947ef0ac21a93, type: 3}
+  m_Script: {fileID: 11500000, guid: c110667484f669949bf3c5ff6dae4b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0, z: 0}
-  max: {x: 0, y: 0, z: 0}
-  min: {x: 0, y: 0, z: 0}
-  speed: 0
-  gravity: 7
-  direction: {x: 0, y: 0, z: 0}
-  isColliding: 0
-  debug: 0
-  contacts: []
+  actors: []
 --- !u!1 &1773483230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.745698, y: 0.40019283}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.4, y: 217.3}
+  m_AnchoredPosition: {x: 12.399963, y: 217.29999}
   m_SizeDelta: {x: -123.01996, y: -487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773483232
@@ -1836,7 +1947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1878989985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,7 +1955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878989984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a1d0dbd2dcd7624487947ef0ac21a93, type: 3}
   m_Name: 
@@ -1852,9 +1963,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
   gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -2049,7 +2171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1971063245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,9 +2187,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
   gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
@@ -2244,7 +2377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2120786723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,9 +2393,20 @@ MonoBehaviour:
   size: {x: 0, y: 0, z: 0}
   max: {x: 0, y: 0, z: 0}
   min: {x: 0, y: 0, z: 0}
+  i: 1
   speed: 0
+  mass: 0
+  weight: 0
+  normal: 0
   gravity: 0
+  n_force: 0
+  f_friction: 0
+  c_friction: 0
+  bouncing: 0
+  top: 1
   direction: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
+  Bauncing_value: {x: 0, y: 0, z: 0}
   isColliding: 0
   debug: 0
   contacts: []
