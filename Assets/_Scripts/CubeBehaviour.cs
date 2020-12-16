@@ -18,14 +18,18 @@ public class CubeBehaviour : MonoBehaviour
     public float weight;
     public float normal;
     public float gravity;
-    public float n_force;
+    //public float time;
+    //public float n_force;
     public float f_friction;
     public float c_friction;
-    public bool bouncing =false;
-    public bool top = true;
+    public Vector3 friction;
+    public bool bouncing;
+    public bool top;
+    public bool going_up;
+    public bool stop = false;
     public Vector3 direction;
-    public Vector3 movement;
-    public Vector3 Bauncing_value;
+    //public Vector3 movement;
+    //public Vector3 Bauncing_value;
 
 
 
@@ -35,7 +39,7 @@ public class CubeBehaviour : MonoBehaviour
 
     private MeshFilter meshFilter;
     private Bounds bounds;
-    private float limit;
+    //private float limit;
 
  
     
@@ -60,58 +64,76 @@ public class CubeBehaviour : MonoBehaviour
     void FixedUpdate()
 
     {
+
         //limit =;
         weight = mass * gravity;
         normal = -weight;
 
-        f_friction = normal * c_friction;
+        f_friction = -normal * c_friction;
 
         //position
         transform.position += direction;
+        
 
-        if (isColliding == true && bouncing == false && top == true)
+        //bouncing
+        if (speed < 0.1f && speed > -0.1f)
         {
- 
-            if (i < 4.0f)
-            {
-                speed = (speed * -1);
-                i++;
-            }
-            else if (i >=4)
-            {
-                speed = 0;
-                gravity = 0;
-            }
-            bouncing = true;
+            top = true;
+            going_up = false;
+        }
+        else if (isColliding == true && top == true)
+        {
+            stop = true;
+        }
+        else
+        {
             top = false;
         }
-        else if (bouncing == true && top == false)
+
+
+
+        if (isColliding == true && top == false)
+        {
+            bouncing = true;
+        }
+        else
         {
             bouncing = false;
         }
-        else if (speed < 0.1)
+
+
+ 
+
+        if (bouncing == true && going_up == false)
         {
-            top = true;
+                speed = (speed * -1);
+            friction = friction + (Vector3.up * f_friction * Time.deltaTime);
+
+            bouncing = false;
+            going_up = true;
         }
-        
 
 
-        //velocity appliance over position
-        direction = (Vector3.down) * speed * Time.deltaTime - i*(Vector3.up * f_friction * Time.deltaTime);
-        //gravity appliance over velocity
-        speed += gravity;
+        //movement
+        if (stop == true)
+        {
+            direction = (Vector3.down) * speed * Time.deltaTime;
+            speed =0;
+        }
+        else if (isColliding == true || top ==false)
+        {
+            direction = (Vector3.down) * speed * Time.deltaTime - friction;
+            speed += gravity;
+        }
+        else
+        {
+            direction = (Vector3.down) * speed * Time.deltaTime;
+            speed += gravity;
+        }
+
+            //gravity appliance over velocity
 
 
-
-
-
-
-
-
-        //transform.position = direction;
-        //direction = direction + (Vector3.down) * (speed * Time.deltaTime + (1/2)* gravity* (Time.deltaTime* Time.deltaTime));
-        //movement =  * speed * Time.deltaTime;
-        //speed += gravity;
     }
 
 
