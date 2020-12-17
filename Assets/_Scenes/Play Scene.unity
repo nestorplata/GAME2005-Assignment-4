@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201024610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.55, y: 0, z: 0.16}
+  m_LocalPosition: {x: 6.55, y: 0, z: -0.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421404685}
@@ -408,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373158401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6999998, y: -9.4, z: 0.71}
+  m_LocalPosition: {x: 2.6999998, y: -9.4, z: 2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465365433}
@@ -443,6 +443,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &373158404
@@ -599,6 +600,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &421404687
@@ -698,6 +700,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &454434232
@@ -858,6 +861,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &503194589
@@ -1035,6 +1039,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!114 &526557358
@@ -1050,6 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actors: []
+  directors: []
 --- !u!1001 &579578804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,7 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 681930396}
   bullet: {fileID: 2898771445226466676, guid: dc05ecf40a596104686052b7abdee0d3, type: 3}
-  fireRate: 10
+  fireRate: 100
   bulletManager: {fileID: 403008322}
 --- !u!4 &579578811 stripped
 Transform:
@@ -1217,6 +1223,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &605384476
@@ -1331,6 +1338,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &617204081
@@ -1409,6 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actors: []
+  directors: []
 --- !u!1 &681930395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,13 +1441,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681930395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.62755096, y: -0.1658023, z: 0.13912463, w: 0.74788624}
   m_LocalPosition: {x: -0.0000064074993, y: 1.1662507, z: -0.0000002980232}
   m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1125924262}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 80, y: -25, z: 0}
 --- !u!1 &728988304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1636,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &818327454
@@ -1740,6 +1750,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &892000651
@@ -1818,7 +1829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970711974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.595, y: -7.4, z: 0.27}
+  m_LocalPosition: {x: 2.595, y: -7.55, z: -1.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 201024611}
@@ -1853,6 +1864,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &970711977
@@ -2029,7 +2041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114506067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.208, y: -8.4, z: 0.27}
+  m_LocalPosition: {x: 3.208, y: -8.4, z: 2.602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 201024611}
@@ -2064,6 +2076,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1114506070
@@ -2500,6 +2513,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1524348166
@@ -2604,6 +2618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actors: []
+  directors: []
 --- !u!1 &1773483230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,7 +2814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827529030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.595, y: -7.4, z: 0.27}
+  m_LocalPosition: {x: 2.595, y: -7.4, z: -1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465365433}
@@ -2834,6 +2849,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1827529033
@@ -2933,6 +2949,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1878989986
@@ -3094,6 +3111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actors: []
+  directors: []
 --- !u!4 &1957707762
 Transform:
   m_ObjectHideFlags: 0
@@ -3156,6 +3174,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1971063246
@@ -3283,6 +3302,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &1988449600
@@ -3506,6 +3526,7 @@ MonoBehaviour:
   stop: 0
   direction: {x: 0, y: 0, z: 0}
   isColliding: 0
+  isCollidingc: 0
   debug: 0
   contacts: []
 --- !u!23 &2120786724

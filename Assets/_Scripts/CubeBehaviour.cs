@@ -33,8 +33,10 @@ public class CubeBehaviour : MonoBehaviour
 
 
     public bool isColliding;
+    public bool isCollidingc;
     public bool debug;
     public List<CubeBehaviour> contacts;
+
 
     private MeshFilter meshFilter;
     private Bounds bounds;
@@ -130,7 +132,11 @@ public class CubeBehaviour : MonoBehaviour
 
 
         //movement
-        if (stop == true)
+        if (isCollidingc == true)
+        {
+            direction = (Vector3.down) * speed * Time.deltaTime;
+        }
+        else if (stop == true)
         {
             speed = 0;
             direction = (Vector3.down) * speed * Time.deltaTime;
@@ -142,6 +148,8 @@ public class CubeBehaviour : MonoBehaviour
             direction = (Vector3.down) * speed * Time.deltaTime - friction;
             speed += gravity;
         }
+
+
         else
         {
 
