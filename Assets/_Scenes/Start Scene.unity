@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e074e0329058e4a8ac7ee4aed6d71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CubeBehaviour: {fileID: 0}
   inputTextFriction: {fileID: 229814466}
   inputTextGravity: {fileID: 126895791}
   inputTextmass_c: {fileID: 0}
@@ -1593,7 +1594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &551092173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1790,7 +1791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &723075860
 RectTransform:
   m_ObjectHideFlags: 0
