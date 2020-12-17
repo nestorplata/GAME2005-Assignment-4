@@ -12,7 +12,6 @@ public class CubeBehaviour : MonoBehaviour
     public Vector3 max;
     public Vector3 min;
 
-    public float i =1.0f;
     public float speed;
     public float mass;
     public float weight;
@@ -23,9 +22,9 @@ public class CubeBehaviour : MonoBehaviour
     public float f_friction;
     public float c_friction;
     public Vector3 friction;
-    public bool bouncing;
-    public bool top;
-    public bool going_up;
+    public bool bouncing = false;
+    public bool top = false;
+    public bool going_up = false;
     public bool stop = false;
     public Vector3 direction;
     //public Vector3 movement;
@@ -41,8 +40,22 @@ public class CubeBehaviour : MonoBehaviour
     private Bounds bounds;
     //private float limit;
 
- 
-    
+    public float gravity_changer
+    {
+        get { return gravity; }
+        set { gravity = value; }
+    }
+    public float c_Friction_changer
+    {
+        get { return c_friction; }
+        set { c_friction = value; }
+    }
+    public float mass_changer
+    {
+        get { return mass; }
+        set { mass = value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +64,8 @@ public class CubeBehaviour : MonoBehaviour
 
         bounds = meshFilter.mesh.bounds;
         size = bounds.size;
+
+
 
     }
 
