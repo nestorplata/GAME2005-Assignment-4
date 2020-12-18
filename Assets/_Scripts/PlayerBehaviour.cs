@@ -11,7 +11,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public BulletManager bulletManager;
 
-    
+
+
     void start()
     {
     }
@@ -19,22 +20,15 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _Fire();
-    }
-
-    private void _Fire()
-    {
-        if (Input.GetAxisRaw("Fire1") > 0.0f)
+        if (Input.GetMouseButtonDown(0))
         {
-            // delays firing
-            if (Time.frameCount % fireRate == 0)
-            {
-                var tempBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-                tempBullet.GetComponent<BulletBehaviour>().direction = bulletSpawn.forward;
-
-                tempBullet.transform.SetParent(bulletManager.gameObject.transform);
-            }
-
+            var tempBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+            tempBullet.GetComponent<BulletBehaviour2>().direction = bulletSpawn.forward;
         }
+
+
+       
     }
+
+  
 }
