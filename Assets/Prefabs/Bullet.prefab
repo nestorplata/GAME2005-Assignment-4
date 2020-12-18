@@ -94,3 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656f24faf7c2db94482d9ef8aa4e70d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  direction: {x: 0, y: 0, z: 0}
+  range: 10
+  radius: 0.05
+  debug: 0
+  isColliding: 0
+  collisionNormal: {x: 0, y: 0, z: 0}
+  penetration: 0
+  bulletManager: {fileID: 0}
