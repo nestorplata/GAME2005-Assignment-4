@@ -22,10 +22,9 @@ public class CubeBehaviour : MonoBehaviour
     public float f_friction;
     public float c_friction;
     public Vector3 friction;
-    public bool bouncing = false;
-    public bool top = false;
+    public bool top = true;
     public bool going_up = false;
-    public bool stop = false;
+    public bool stop;
     public Vector3 direction;
     //public Vector3 movement;
     //public Vector3 Bauncing_value;
@@ -33,7 +32,6 @@ public class CubeBehaviour : MonoBehaviour
 
 
     public bool isColliding;
-    public bool isCollidingc;
     public bool debug;
     public List<CubeBehaviour> contacts;
 
@@ -82,6 +80,7 @@ public class CubeBehaviour : MonoBehaviour
 
     {
 
+
         //limit =;
         weight = mass * gravity;
         normal = -weight;
@@ -89,19 +88,17 @@ public class CubeBehaviour : MonoBehaviour
         f_friction = -normal * c_friction;
 
         //position
-        transform.position += direction;
-        
 
         //bouncing
-        if (speed < 0.1f && speed > -0.1f)
+        if (speed< 0.1f && speed >-0.1f)
         {
             top = true;
-            going_up = false;
         }
         else
         {
             top = false;
         }
+
         if (isColliding == true && top == true)
         {
             stop = true;
@@ -109,57 +106,72 @@ public class CubeBehaviour : MonoBehaviour
 
 
 
-        if (isColliding == true && top == false)
+        //else
+        //{
+        //    stop = false;
+        //}
+        if (top == true && going_up == true || stop == true)
         {
-            bouncing = true;
+            going_up = false;
         }
-        else
+        else if (speed <-0.1f && going_up ==false)
         {
-            bouncing = false;
+             going_up = true;
+         }
+
+
+
+
+        //if (isColliding == true && top == false)
+        //{
+        //    bouncing = true;
+        //}
+        //else
+        //{
+        //    bouncing = false;
+        //}
+
+
+
+        if (stop == true)
+        {
+            speed=0.0f;
+            friction = (Vector3.zero);
+
         }
-
-
- 
-
-        if (bouncing == true && going_up == false)
+        else if (isColliding == true && going_up == false)
         {
                 speed = (speed * -1);
-            friction = friction + (Vector3.up * f_friction * Time.deltaTime);
-
-            bouncing = false;
-            going_up = true;
-        }
-
-
-        //movement
-        if (isCollidingc == true)
-        {
-            direction = (Vector3.down) * speed * Time.deltaTime;
-        }
-        else if (stop == true)
-        {
-            speed = 0;
-            direction = (Vector3.down) * speed * Time.deltaTime;
+            friction += (Vector3.up * f_friction * Time.deltaTime);
 
         }
-        else if (isColliding == true || top ==false)
+
+        
+
+        if(stop ==true)
         {
 
-            direction = (Vector3.down) * speed * Time.deltaTime - friction;
-            speed += gravity;
+            direction= (Vector3.down) * speed * Time.deltaTime;
+
         }
-
-
         else
         {
+            if (isColliding == true || top == false)
+            {
 
-            direction = (Vector3.down) * speed * Time.deltaTime;
-            speed += gravity;
+                direction =(Vector3.down) * speed * Time.deltaTime - friction;
+                speed += gravity;
+            }
+            else
+            {
+
+                direction= (Vector3.down) * speed * Time.deltaTime;
+                speed += gravity;
+            }
         }
 
-            //gravity appliance over velocity
 
-
+        transform.position += direction;
     }
 
 

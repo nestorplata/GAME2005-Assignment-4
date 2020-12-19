@@ -24,6 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             var tempBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
             tempBullet.GetComponent<BulletBehaviour2>().direction = bulletSpawn.forward;
+            //tempBullet.transform.SetParent(bulletManager.gameObject.transform);
         }
 
 
