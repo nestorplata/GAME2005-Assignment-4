@@ -114,7 +114,7 @@ public class CollisionManager : MonoBehaviour
             bullet.collisionNormal = side;
 
             Reflect(bullet);
-            
+            cube.stop = false;
         }
 
     }
@@ -133,4 +133,5 @@ public class CollisionManager : MonoBehaviour
             bullet.direction = new Vector3(bullet.direction.x, -bullet.direction.y, bullet.direction.z);
         }
     }
+
 }

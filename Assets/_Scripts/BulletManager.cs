@@ -17,7 +17,7 @@ public class BulletManager : MonoBehaviour
 
     private void _BuildBulletPool()
     {
-        // create empty Queue structures
+     
         m_playerBulletPool = new Queue<GameObject>();
 
         for (int count = 0; count < MaxBullets; count++)
