@@ -96,10 +96,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   direction: {x: 0, y: 0, z: 0}
+  mCenter: {x: 0, y: 0, z: 0}
   range: 10
   radius: 0.05
   debug: 0
   isColliding: 0
   collisionNormal: {x: 0, y: 0, z: 0}
+  friction: {x: 0, y: 0, z: 0}
+  f_friction: 0
+  a_friction: 0.005
+  c_friction: 0.05
   penetration: 0
   bulletManager: {fileID: 0}

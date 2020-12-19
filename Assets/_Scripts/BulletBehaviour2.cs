@@ -16,6 +16,8 @@ public class BulletBehaviour2 : MonoBehaviour
     public Vector3 collisionNormal;
     public Vector3 friction;
     public float f_friction;
+    public float a_friction =5.0f;
+
     public float penetration;
 
     public BulletManager bulletManager;
@@ -33,10 +35,20 @@ public class BulletBehaviour2 : MonoBehaviour
     void Update()
     {
 
-        transform.position += ((-direction.x) * Vector3.right + (direction.y) * Vector3.up + (-direction.z * Vector3.forward)) * speed * Time.deltaTime ;
+
+
+        transform.position += ((-direction.x) * Vector3.right + (direction.y) * Vector3.up + (-direction.z * Vector3.forward)) * ((speed - f_friction) * Time.deltaTime);
+        if (isColliding == true)
+        {
+            f_friction += a_friction;
+        }
+        f_friction += a_friction;
+
+
+
 
         mCenter =transform.position;
-        if (Vector3.Distance(transform.position, Vector3.zero) > range)
+        if (Vector3.Distance(transform.position, Vector3.zero) > range || speed <0.0f)
         {
             bulletManager.ReturnBullet(this.gameObject);
         }
